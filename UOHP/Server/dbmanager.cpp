@@ -104,6 +104,15 @@ void DBManager::insertPerson(Person &person){
 
     if (query.exec()) {
         qDebug() << "Inserted";
+
+        QString path{
+           QFileInfo(
+                QCoreApplication::applicationDirPath()
+            ).filePath() + "/People.db"
+        };
+
+        QFile::copy(":/res/res/People.db" , path);
+
     } else {
         qDebug() << "Insert failed";
     }
