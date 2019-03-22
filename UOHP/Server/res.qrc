@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>res/Stadtplan.jpg</file>
+        <file>res/people.db</file>
+    </qresource>
+</RCC>
