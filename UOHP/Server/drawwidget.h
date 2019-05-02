@@ -21,7 +21,7 @@ public:
     void drawPeople(std::vector<Person> people);
     QPoint personToPoint(Person person);
 private:
-    QPixmap pic;
+    QImage pic;
     DBManager database = DBManager::getInstance();
 
     double leftLong{16.209652};

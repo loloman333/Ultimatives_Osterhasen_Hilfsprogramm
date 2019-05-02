@@ -1,5 +1,6 @@
 #include "drawwidget.h"
 
+
 DrawWidget::DrawWidget(QWidget *parent) : QWidget(parent)
 {
     resetPic();
@@ -7,17 +8,17 @@ DrawWidget::DrawWidget(QWidget *parent) : QWidget(parent)
 
 void DrawWidget::paintEvent(QPaintEvent *) {
     QPainter painter{this};
-    painter.drawPixmap(0, 0, pic);
+    painter.drawImage(0, 0, pic);
 }
 
 void DrawWidget::resetPic() {
-    QPixmap map(":/res/res/Stadtplan.jpg");
+    QImage map(":/res/res/Stadtplan.jpg");
     map = map.scaled(490, 600);
 
-    QPixmap l_pic{490, 600};
+    QImage  l_pic{490, 600, QImage::Format_RGB32};
     QPainter painter(&l_pic);
 
-    painter.drawPixmap(0, 0, map);
+    painter.drawImage(0, 0, map);
 
     mapWidth = map.width();
     mapHeight = map.height();
